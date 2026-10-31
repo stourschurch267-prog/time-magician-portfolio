@@ -1,0 +1,25 @@
+name: Transfer complete portfolio media
+on:
+  push:
+    branches: [migration-transfer]
+    paths: [.github/workflows/transfer-media.yml]
+permissions:
+  contents: write
+concurrency:
+  group: portfolio-media-transfer
+  cancel-in-progress: false
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Load the reviewed migration files from this commit
+        shell: bash
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/contents/transfer-manifest.json?ref=$GITHUB_SHA" --jq .content | base64 --decode > transfer-manifest.json
+          gh api "repos/$GITHUB_REPOSITORY/contents/transfer-github-media.py?ref=$GITHUB_SHA" --jq .content | base64 --decode > transfer-github-media.py
+          python -m py_compile transfer-github-media.py
+      - name: Copy and verify every complete portfolio video
+        run: python transfer-github-media.py
