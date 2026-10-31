@@ -1,0 +1,16 @@
+name: Verify portfolio transfer
+on:
+  push:
+    branches: [migration-transfer]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify an existing public portfolio video
+        shell: bash
+        run: |
+          curl --fail --location --retry 2 --connect-timeout 15 --max-time 120 'https://time-magician-liu-guangzhe.gladbow513.chatgpt.site/portfolio/drama/drama-196774539aaa.mp4' --output sample.mp4
+          echo 'bf510bc94938b5deabffaba62febe2d9348b86f6ebfcd1886501c852ab2d0a58  sample.mp4' | sha256sum --check
