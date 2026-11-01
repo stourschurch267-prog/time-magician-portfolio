@@ -1,32 +1,17 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <title>访问验证 · Time Magician 刘广哲</title>
-  <style>
-    :root { color-scheme:light; font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif; color:#203e45; background:#eff7f8; }
-    * { box-sizing:border-box; } body { margin:0; } main { max-width:920px; margin:auto; padding:32px 24px 64px; }
-    header { display:flex; align-items:center; gap:20px; padding-bottom:28px; border-bottom:1px solid #c8dcdf; }
-    .mark { font:italic 600 42px Georgia,serif; } .name { margin:0; font-size:18px; } .eyebrow { font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
-    .intro { padding:44px 0 26px; } h1 { font-size:clamp(28px,6vw,44px); line-height:1.35; font-weight:600; margin:0 0 16px; }
-    p { line-height:1.8; } .muted { color:#58737a; } article { margin:22px 0; padding:24px; border:1px solid #d4e3e6; border-radius:22px; background:#fbfefe; }
-    h2 { font-weight:550; font-size:20px; margin:0 0 10px; } video { display:block; margin-top:20px; width:100%; max-height:65vh; background:#102126; border-radius:12px; object-fit:contain; }
-    button { font:inherit; border:0; border-radius:30px; padding:13px 24px; background:#087f8d; color:white; cursor:pointer; min-height:46px; }
-    button:disabled { background:#d8e5e7; color:#637a80; cursor:default; } button:focus-visible { outline:3px solid #203e45; outline-offset:4px; }
-    .status { font-size:14px; margin:12px 0 0; min-height:26px; } footer { padding-top:16px; font-size:14px; color:#58737a; }
-    @media(max-width:480px) { main { padding:24px 16px 48px; } article { padding:18px; } }
-  </style>
-</head>
-<body>
-<main>
-  <header><span class="mark" aria-hidden="true">TM</span><div><p class="name">刘广哲</p><div class="eyebrow">Time Magician</div></div></header>
-  <section class="intro"><p class="eyebrow">Portfolio · Access check</p><h1>让每一次打开，<br>都能看见作品。</h1><p class="muted">这是正式迁移前的访问测试页，无需登录。请播放下面两段作品，并尝试拖动进度条。</p></section>
-  <article><h2>01 · 首页影像</h2><p class="muted">景区风景集合 · 横屏</p><button id="play-site" type="button">播放首页影像</button><p class="status" id="status-site" role="status">等待播放</p><video id="video-site" controls playsinline preload="none" poster="./media/poster.webp" aria-label="景区风景集合"></video></article>
-  <article><h2>02 · 账号作品</h2><p class="muted">大学生的 AI 助理 · 你好关键帧<br>请同时确认能听见声音。</p><button id="play-library" type="button" disabled>正在准备作品链接</button><p class="status" id="status-library" role="status">正在读取作品链接</p><video id="video-library" controls playsinline preload="none" aria-label="你好关键帧账号作品"></video></article>
-  <footer>两段视频都能正常播放后，请回到聊天告诉我“可以观看”。确认后将迁移完整网站；访客始终没有修改权限。</footer>
-</main>
-<script src="./check.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e0f2f5" />
+    <meta name="description" content="刘广哲的个人作品集。剪辑、摄影与摄像，以镜头观察，以剪辑叙事。" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preload" as="image" href="./media/hero-scenic-poster.webp" fetchpriority="high" />
+    <title>刘广哲 · 剪辑 / 摄影摄像 | LIU GUANGZHE</title>
+    <script type="module" crossorigin src="./assets/index-Dhy2wWBR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DfrVsB_l.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
